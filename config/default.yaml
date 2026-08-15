@@ -1,0 +1,35 @@
+# Roles can be overridden with real column names.
+schema_overrides: {}
+
+features:
+  rolling_months_short: 3
+  rolling_months_medium: 6
+  rolling_months_long: 12
+  relationship_window: 6
+  min_history_months_for_stability: 3
+
+scores:
+  client:
+    persistence: 0.25
+    stability: 0.25
+    quality: 0.20
+    relationship_fidelity: 0.30
+  merchant:
+    persistence: 0.20
+    stability: 0.25
+    quality: 0.15
+    customer_recurrence: 0.30
+    diversification: 0.10
+
+  # Score bands are descriptive, not fraud labels.
+  bands:
+    very_high: 85
+    high: 70
+    medium: 50
+    low: 0
+
+graph:
+  min_relationship_strength: 30
+  max_edges: 200000
+  projection_min_weight: 1
+  community_seed: 42

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trustgraph"
+version = "0.1.0"
+description = "Trust Score transaccional y relacional para clientes y comercios de una red adquirente"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas>=2.2,<3.0",
+  "numpy>=2.0,<3.0",
+  "networkx>=3.4,<4.0",
+  "scikit-learn>=1.5,<2.0",
+  "PyYAML>=6.0,<7.0",
+  "matplotlib>=3.9,<4.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0,<10.0"]
+
+[project.scripts]
+trustgraph = "trustgraph.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
